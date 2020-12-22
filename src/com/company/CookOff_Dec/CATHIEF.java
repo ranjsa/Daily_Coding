@@ -1,4 +1,4 @@
-//package com.company.CookOff_Dec;
+package com.company.CookOff_Dec;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,24 +6,31 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 
-public class Main {
-
-
+public class CATHIEF {
 
     public void solve() throws IOException {
         int t = nextInt();
         while(t --> 0) {
-            long x = nextLong();
-            long y = nextLong();
-            long k = nextLong();
-            long n = nextLong();
+            int x = nextInt();
+            int y = nextInt();
+            int k = nextInt();
+            int n = nextInt();
 
-            long d = Math.abs(x - y);
-            if ((isOdd(k) && isOdd(d)) || (isOdd(d) && !isOdd(k)) || (!isOdd(k) && !isOdd(d) && isOdd(n))) {
-                out.println("No");
+            int d = Math.abs(x - y);
+
+            if ((d % (2*k)) == 0) {
+                System.out.println("Yes");
             }else {
-                out.println("Yes");
+                System.out.println("No");
             }
+
+
+            //My Initial Approach FAILED
+//            if ((isOdd(k) && isOdd(d)) || (isOdd(d) && !isOdd(k)) || (!isOdd(k) && !isOdd(d) && isOdd(n))) {
+//                out.println("No");
+//            }else {
+//                out.println("Yes");
+//            }
         }
 
 
@@ -83,6 +90,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-         new Main().run();
+         new CATHIEF().run();
     }
 }
