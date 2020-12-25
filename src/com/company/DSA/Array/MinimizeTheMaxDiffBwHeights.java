@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class MinimizeTheMaxDiffBwHeights {
     public static void main(String[] args) {
-        int arr[] = {1, 5, 8, 10};
+        int arr[] = {6, 1, 9, 1, 1, 7, 9, 5, 2, 10};
         int n = arr.length;
-        int k = 2;
+        int k = 4;
         int maxDiff = getMaxDiff(arr, k, n);
         System.out.println(maxDiff);
     }
