@@ -2,19 +2,20 @@ package com.company.DSA.Array;
 
 public class MinJumpsToReachEndofArray {
     // Driver method to test the above function
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int arr[] = new int[] {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
         // calling minJumps method
         System.out.println(minJumps(arr));
     }
-
     public static int minJumps(int[] array) {
-        //if length of array is 1 return 0
         int n = array.length;
         if (n == 1) {
             return 0;
         }
+
+        // Return -1 if not possible to jump
+        if (array[0] == 0)
+            return -1;
 
         int maxR = array[0];
         int step = array[0];
@@ -31,7 +32,7 @@ public class MinJumpsToReachEndofArray {
                 if (i >= maxR) {
                     return -1;
                 }
-                step = maxR - 1;
+                step = maxR - i;
             }
         }
         return jump;
