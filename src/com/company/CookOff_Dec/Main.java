@@ -1,11 +1,8 @@
-package com.company.CookOff_Dec;
+//package com.company.CookOff_Dec;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Random;
 import java.util.StringTokenizer;
 
 
@@ -14,7 +11,26 @@ public class Main {
     public void solve() throws IOException {
         int t = nextInt();
         while(t --> 0) {
+              String s = nextToken();
+              int countZero = 0;
+              int countOne = 0;
+              int ans = 0;
+              for (int i =0; i < s.length(); i++) {
+                  if (s.charAt(i) == '0') {
+                      countZero += 1;
+                  } else {
+                      countOne += 1;
+                  }
+              }
 
+              if (s.length() % 2 == 1 || countZero == 0 || countOne == 0) {
+                  ans = -1;
+              } else {
+                  int diff = Math.abs(countZero - countOne);
+                  ans = diff / 2;
+              }
+
+              out.println(ans);
         }
     }
 
