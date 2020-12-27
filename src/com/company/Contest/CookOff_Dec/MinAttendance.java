@@ -1,4 +1,6 @@
-package com.company.CookOff_Dec;
+package com.company.Contest.CookOff_Dec;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,31 +8,31 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 
-public class SDSTRING {
+public class MinAttendance {
+
 
     public void solve() throws IOException {
         int t = nextInt();
         while(t --> 0) {
-              String s = nextToken();
-              int countZero = 0;
-              int countOne = 0;
-              int ans = 0;
-              for (int i =0; i < s.length(); i++) {
-                  if (s.charAt(i) == '0') {
-                      countZero += 1;
-                  } else {
-                      countOne += 1;
-                  }
-              }
+            int n = nextInt();
+            String a = nextToken();
+            int daysLeft = 120 - n;
+            float daysGone = 0;
+            for (int i =0; i < a.length(); i++) {
+                if (a.charAt(i) == '1') {
+                    daysGone++;
+                }
+            }
 
-              if (s.length() % 2 == 1 || countZero == 0 || countOne == 0) {
-                  ans = -1;
-              } else {
-                  int diff = Math.abs(countZero - countOne);
-                  ans = diff / 2;
-              }
-
-              out.println(ans);
+            daysGone += daysLeft;
+            float per1 = (daysGone / 120);
+            float per = per1 * 100;
+          //  out.println(per);
+            if (per >= 75) {
+                out.println("YES");
+            } else {
+                out.println("NO");
+            }
         }
     }
 
@@ -80,6 +82,6 @@ public class SDSTRING {
     }
 
     public static void main(String[] args) throws IOException {
-         new SDSTRING().run();
+         new MinAttendance().run();
     }
 }

@@ -1,6 +1,4 @@
-package com.company.CookOff_Dec;
-
-
+package com.company.Contest.CookOff_Dec;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,31 +6,41 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 
-public class MinAttendance {
-
+public class CATHIEF {
 
     public void solve() throws IOException {
         int t = nextInt();
         while(t --> 0) {
+            int x = nextInt();
+            int y = nextInt();
+            int k = nextInt();
             int n = nextInt();
-            String a = nextToken();
-            int daysLeft = 120 - n;
-            float daysGone = 0;
-            for (int i =0; i < a.length(); i++) {
-                if (a.charAt(i) == '1') {
-                    daysGone++;
-                }
+
+            int d = Math.abs(x - y);
+
+            if ((d % (2*k)) == 0) {
+                System.out.println("Yes");
+            }else {
+                System.out.println("No");
             }
 
-            daysGone += daysLeft;
-            float per1 = (daysGone / 120);
-            float per = per1 * 100;
-          //  out.println(per);
-            if (per >= 75) {
-                out.println("YES");
-            } else {
-                out.println("NO");
-            }
+
+            //My Initial Approach FAILED
+//            if ((isOdd(k) && isOdd(d)) || (isOdd(d) && !isOdd(k)) || (!isOdd(k) && !isOdd(d) && isOdd(n))) {
+//                out.println("No");
+//            }else {
+//                out.println("Yes");
+//            }
+        }
+
+
+    }
+
+    public boolean isOdd(long n) {
+        if (n % 2 == 0) {
+            return false;
+        } else {
+            return true;
         }
     }
 
@@ -82,6 +90,6 @@ public class MinAttendance {
     }
 
     public static void main(String[] args) throws IOException {
-         new MinAttendance().run();
+         new CATHIEF().run();
     }
 }
