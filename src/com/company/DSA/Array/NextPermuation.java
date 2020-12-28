@@ -1,6 +1,7 @@
 package com.company.DSA.Array;
 
 public class NextPermuation {
+    //Approach: 1 Time O(n) | Space O(1)
      public static void nextPermutation(int[] array) {
          if (array == null || array.length <= 1) {
              return;
