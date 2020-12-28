@@ -32,5 +32,11 @@ public class NextPermuation {
      }
 }
 /*
+   Find 1st id i that breaks descending order
+   If not entirely descending
+   Start from the end
+   Find rightmost first larger id j
+   Switch i and j
+   Reverse the descending sequence
 
  */
