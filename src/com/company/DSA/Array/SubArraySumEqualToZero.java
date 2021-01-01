@@ -6,7 +6,7 @@ import java.util.Map;
 public class SubArraySumEqualToZero {
     public static void main(String[] args) {
           int[] array = {4, 2, -3, 1, 6};
-        System.out.println(isSubArraySumEqualTo0(array));
+        System.out.println(isSubArraySumEqualTo0_2(array));
     }
 
     public static boolean isSubArraySumEqualTo0_2 (int[] array) {
@@ -15,11 +15,11 @@ public class SubArraySumEqualToZero {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for(int i =0 ; i < array.length; i++) {
             sum += array[i];
-            if (sum == 0 || map.containsKey(array[i]) || array[i] == 0) {
+            if (sum == 0 || map.containsKey(sum) || array[i] == 0) {
                 flag = 1;
                 break;
             } else {
-                map.put(array[i], map.get(array[i] + 1));
+                map.put(array[i],i);
             }
         }
 
