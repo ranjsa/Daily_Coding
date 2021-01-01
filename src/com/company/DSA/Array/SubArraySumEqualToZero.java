@@ -1,10 +1,35 @@
 package com.company.DSA.Array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SubArraySumEqualToZero {
     public static void main(String[] args) {
           int[] array = {4, 2, -3, 1, 6};
         System.out.println(isSubArraySumEqualTo0(array));
     }
+
+    public static boolean isSubArraySumEqualTo0_2 (int[] array) {
+        int sum = 0;
+        int flag = 0;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(int i =0 ; i < array.length; i++) {
+            sum += array[i];
+            if (sum == 0 || map.containsKey(array[i]) || array[i] == 0) {
+                flag = 1;
+                break;
+            } else {
+                map.put(array[i], map.get(array[i] + 1));
+            }
+        }
+
+        if (flag == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //Approach 1 Time O(n^2) | Space O(1)
     public static boolean isSubArraySumEqualTo0 (int[] array) {
         int flag = 0;
