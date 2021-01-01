@@ -8,7 +8,7 @@ public class SubArraySumEqualToZero {
           int[] array = {4, 2, -3, 1, 6};
         System.out.println(isSubArraySumEqualTo0_2(array));
     }
-
+    //Approach - 2 Time O(n) | Space O(n)
     public static boolean isSubArraySumEqualTo0_2 (int[] array) {
         int sum = 0;
         int flag = 0;
