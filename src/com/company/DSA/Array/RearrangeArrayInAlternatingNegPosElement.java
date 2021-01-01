@@ -46,6 +46,10 @@ public class RearrangeArrayInAlternatingNegPosElement {
                 k += 2;
                 start++;
             }
+            /*
+            {2, 3, 6, -1, -4, -9}
+            {-1, 3, -4, 2, -9, 6}
+             */
             for(int i =0; i < array.length; i++) {System.out.print(array[i] + " ");}
         }
     }
