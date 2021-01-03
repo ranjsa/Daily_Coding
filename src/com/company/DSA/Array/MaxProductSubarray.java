@@ -1,19 +1,40 @@
 package com.company.DSA.Array;
 
-public class MaxProductSubarray {
-    public static void main(String[] args) {
 
+    /*
+               -1, -3, -10, 0, 60
+
+
+               maxVal = 3
+               minVal = -1
+               maxProduct = -1
+     */
+
+
+public class MaxProductSubarray {
+
+    public static void main(String[] args) {
+        int arr[] = { -1, -3, -10, 0, 60 };
+        System.out.println("Max Product " + maxProduct(arr));
     }
+
+    //Approach:1 Time O(n) | Space O(1)
     public static int maxProduct(int[] array) {
+        // array length
         int n = array.length;
 
-
+        // take two variables to store maximum and minimum Value
         int minVal = array[0];
         int maxVal = array[0];
-
-        int maxProduct = array[0];
+        //max product till index
+        int maxSoFar = array[0];
 
         for (int i =1; i < n; i++) {
+            /*
+                When multiplied by -ve number,
+                maxVal becomes minVal
+                and minVal becomes maxVal
+            */
              if (array[i] < 0) {
                  int temp = maxVal;
                  maxVal = minVal;
@@ -24,9 +45,9 @@ public class MaxProductSubarray {
              minVal = Math.min(array[i], minVal * array[i]);
 
              //Max Product of array
-            maxProduct = Math.max(maxProduct, maxVal);
+            maxSoFar = Math.max(maxSoFar, maxVal);
         }
         //Return the maxProduct
-        return maxProduct;
+        return maxSoFar;
     }
 }
