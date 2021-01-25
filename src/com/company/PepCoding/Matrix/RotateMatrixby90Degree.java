@@ -15,18 +15,23 @@ public class RotateMatrixby90Degree {
             }
         }
 
-        /*                (i,j) =>  (j,i)
-
-                   1 2      (0,0) (0,1)    ->
-                   3 4      (1,0) (1,1)
-         */
-
-        // Make row to col
+        // Make row to col i.e. MAKE TRANSPOSE (WRONG CODE) -> because the code is swapping the elements twice
+        // which is makeing it similar to what it was previously
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 int temp = array[j][i];
                 array[j][i] = array[i][j];
                 array[i][j] = temp;
+            }
+        }
+
+
+        //make TRANSPOSE of a matrix CORRECT CODE
+        for (int r = 0; r < array.length; r++) {
+            for (int c = r; c < array[0].length; c++) {
+                int temp = array[r][c];
+                array[r][c] = array[c][r];
+                array[c][r] = temp;
             }
         }
 
@@ -46,6 +51,8 @@ public class RotateMatrixby90Degree {
         display(array);
 
     }
+
+
 
     public static void display(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
