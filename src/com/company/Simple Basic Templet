@@ -16,6 +16,13 @@ import java.util.StringTokenizer;
         while(t --> 0) {}
     }
 
+    public void solve() throws IOException {
+       final long startTime = System.currentTimeMillis();
+                   //write code here to log time;
+       final long endTime = System.currentTimeMillis();
+       System.out.println("Total execution time: " + (endTime - startTime) + " ms");
+    }
+
     public void run() {
         try {
             br = new BufferedReader(new InputStreamReader(System.in));
