@@ -1,4 +1,5 @@
-package com.company.UAIP.Week_2.L2;
+package com.company.DSA.Matrix;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,14 +9,18 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-/*
- Question 3 :- You have a 2D array of Integers. Calculate the total sum of all sub matrix for the given matrix.
-      Constraint n,m <= 10 ^ 4
-
- */
-
-public class Question3 {
+public class FindMedian {
         public void solve() throws IOException {
+            // Input matrix
+            int r = nextInt();
+            int c = nextInt();
+            int[][] mat = new int[r][c];
+            for (int i =0; i < r; i++) {
+                for (int j = 0; j < c; j++) {
+                    mat[i][j] = nextInt();
+                }
+            }
+
 
         }
 
@@ -72,6 +77,6 @@ public class Question3 {
         }
 
         public static void main(String[] args) throws IOException {
-            // new BasicTemplete().run();
+            new FindMedian().run();
         }
     }
